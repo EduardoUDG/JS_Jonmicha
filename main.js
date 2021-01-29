@@ -1,33 +1,20 @@
-let verdadero = true
-let falso = false
-
-console.log(verdadero, falso);
-console.log(typeof verdadero, typeof falso);
- 
 /* 
-    Valores que tienden a ser True
-    true
-    {}
-    42
-    "foo"
-    new Date()
-    (-42)
-    (3.14)
-    (-3.14)
-    (Infinity)
-    (-Infinity)
-    " "
-
-    -------------------------------------
-
-    Valores que tienden a falso
-    false
-    null
-    undefined
-    0
-    NaN 
-    ''
-    ""
-    document.all
-
+    null y undefine:
+    representan un valor ausente
 */
+
+
+/* No tiene un valor inicializado (undefined) */
+let indefinida
+console.log(indefinida);
+
+
+/* Si tiene un avlor inicializado (null*/
+let nulo = null;
+console.log(nulo);
+
+
+/* NaN cuando queremos hacer una operacion que no es un numero (NaN) */
+let noEsUnNumero = 'Hola' * 3.4
+console.log(noEsUnNumero);
+
