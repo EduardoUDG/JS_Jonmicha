@@ -1,42 +1,70 @@
+// Recordemos que podemos hacer una
+// instancia de objeto de la siguiente manera
+
+let a = new String('Hola');
+// console.log(a);
+
+/* --------------------------------------- */
+
+// Este es un Objeto
+const b = {}
+// console.log(b);
+
+
+/* --------------------------------------- */
+
+const User = {
+    nameUser: 'Eduardo',
+    lastUser: 'Chavez',
+    ageUser: '20',
+    pasatiemposUser: ['Jugar','Guitarra','Dibujar',],
+    solter: true,
+    contactUser: {
+        emailUser: 'lalo@gmail.com',
+        paisUser: 'Mexico',
+        numberUser: '52334425478',
+    },
+    saludarUser: function(){
+        console.log('Hola saludos!!')
+    },
+    decirNombreUser: function(){
+        console.log(`Hola bienvenido ${this.nameUser} ${this.lastUser} y tengo ${this.ageUser}`)
+    },
+}
 /* 
-    Tenemos diferentes maneras de hacer arreglos:
+*   Dentro de un objeto a las avariables se les van
+*   a llamar atributos/propiedades y a las
+*   funciones se les llama metodos
 */
 
-// Primera forma
-const a = []
-const b = ['A', true, 'hola', ['1', '2', '3']]
-//  .length nos devuelve el (Numero de elementos de un rarreglo)
-console.log(a.length);
-console.log(b.length);
+console.log(User);
+console.log(User['nameUser']);
+console.log(User.ageUser);
+console.log(User.solter);
+console.log(User.pasatiemposUser[1]);
+console.log(User.contactUser.paisUser);
+User.saludarUser()
+User.decirNombreUser('Pedrito')
+
+// * lo que esta dentro de un objeto 
+// * lo enlista como un arreglo (Solo las propiededes)
+console.log(Object.keys(User));
+
+// * regresa los valores de que tienen las propiedades
+// * en un objeto
+
+console.log(Object.values(User));
+
+// * Busca el la propiedad con el nombre que le pasemos 
+
+console.log(User.hasOwnProperty('nameUser'));
 
 
 
-//  Segunda forma
-const c = Array.of('x', 'Y', 'z', 9, 8, 7);
-console.log(c);
-
-
-/* ------------------------------------------------------------- */
-// Podemos inicializar un arreglo de la siguiente manera
-// utilizando el prototipo de un arreglo como se muestra:
-
-/* 
-const d = Array(50).fill(false);
-console.log(d);
-*/
 
 
 
-const colores = ['Rojo', 'Azul', 'Verde']
-console.log(colores);
-// .push manda un nuevo elemento al final
-colores.push('Amarillo')
-console.log(colores);
-// .pop quita el ultimo elemento del areglo
-colores.pop();
-console.log(colores);
 
 
-colores.forEach(function (el, i){
-    console.log(`<li id="${i}"> ${el} </li> `)
-});
+
+
