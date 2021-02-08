@@ -1,28 +1,28 @@
-/* 
-*   Un forin nos permite recorrer todas
-*   las propiedades de un objeto: 
-*/
 
-const user = {
-    nameUser: 'Eduardo',
-    lastUser: 'Chavez',
-    ageUser: 20,
+
+try {
+    console.log('En el try se agrega el codigo a evaluar');
+    // noExiste;
+} catch (error) {
+    console.log('Captura cualquier error surgido o lanzado en el try');
+    // console.log(error)
+} finally {
+    console.log('Se ejecutara siempre al final de un bloque Try-catch');
 }
 
-
-for (const propiedad in user) {
-    console.log(propiedad);
-    console.log(`Key: ${propiedad}, Values: ${user[propiedad]}`);
-}
-
-/* 
-*   Un forof nos permite recorrer todos los
-*   elementos de cualquier objeto que sea
-*   iterable en JavaScrit
+/*
+*   isNanN()   es una funciones que nos indica 
+*   si no es un numero noes regresara true
+*   si, si es un numero nos regresara falso   
 */
 
-const numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+try {
+    let numero = 'y'
 
-for (const elemento of numeros) {
-    console.log(elemento);
+    if(isNaN(numero)) {
+        throw new Error('El caracter introducido no es un Numero')
+    }
+    console.log(numero * numero);
+} catch {
+    console.log(Se produjo el siguiente error: ${error});
 }
