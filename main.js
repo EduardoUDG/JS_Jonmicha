@@ -1,28 +1,27 @@
-
-
-try {
-    console.log('En el try se agrega el codigo a evaluar');
-    // noExiste;
-} catch (error) {
-    console.log('Captura cualquier error surgido o lanzado en el try');
-    // console.log(error)
-} finally {
-    console.log('Se ejecutara siempre al final de un bloque Try-catch');
-}
-
-/*
-*   isNanN()   es una funciones que nos indica 
-*   si no es un numero noes regresara true
-*   si, si es un numero nos regresara falso   
+/* 
+*   Uso de Break de toda la vida
+*   El break sale de estructura de control
 */
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-try {
-    let numero = 'y';
-
-    if(isNaN(numero)) {
-        throw new Error('El caracter introducido no es un Numero')
+for (let i=0; i<numeros.length ;i++) {
+    if (i === 5) {
+        break;
     }
-    console.log(numero * numero);
-} catch(error) {
-    console.log(`Se produjo el siguiente error: ${error}`);
+    console.log(numeros[i]);
 }
+
+
+
+
+/* 
+*   Uso de Continue de toda la vida
+*   Ignora la siguiente posicion y continua con la iteracion 
+*/
+for (let i=0; i<numeros.length ;i++) {
+    if (i === 5) {
+        continue;
+    }
+    console.log(numeros[i]);
+}
+
