@@ -17,12 +17,12 @@ try {
 */
 
 try {
-    let numero = 'y'
+    let numero = 'y';
 
     if(isNaN(numero)) {
         throw new Error('El caracter introducido no es un Numero')
     }
     console.log(numero * numero);
-} catch {
-    console.log(Se produjo el siguiente error: ${error});
+} catch(error) {
+    console.log(`Se produjo el siguiente error: ${error}`);
 }
