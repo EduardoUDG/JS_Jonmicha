@@ -1,27 +1,20 @@
-/* 
-*   Uso de Break de toda la vida
-*   El break sale de estructura de control
-*/
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const numeros = [1, 2, 3];
 
-for (let i=0; i<numeros.length ;i++) {
-    if (i === 5) {
-        break;
-    }
-    console.log(numeros[i]);
+// Sin destructuracion
+let uno = numeros[0], dos = numeros[1], tres = numeros[2];
+console.log(uno, dos, tres);
+
+
+// Cons destructuracion
+const [one, two, three] = numeros;
+console.log(one, two, three); 
+
+
+let persona = {
+    nombre:'Eduardo',
+    apellido:'Chavez',
+    edad:20,
 }
 
-
-
-
-/* 
-*   Uso de Continue de toda la vida
-*   Ignora la siguiente posicion y continua con la iteracion 
-*/
-for (let i=0; i<numeros.length ;i++) {
-    if (i === 5) {
-        continue;
-    }
-    console.log(numeros[i]);
-}
-
+let {nombre,apellido,edad} = persona;
+console.log(nombre, apellido, edad);
