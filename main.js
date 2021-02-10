@@ -1,66 +1,61 @@
-// *Ejemplo de como funciona el forEach
-// let numeros = [10, 20, 30, 40, 50];
-// numeros.forEach(function (valor) {
-//    console.log(valor); 
-// });
-
-
-
-// TODO Parametros REST & 
-// * EL parametros REST puede ser o no infinito
-function sumar(a, b, ...c) {
-    let resultado = a + b;
-    
-    c.forEach(function (n) {
-       resultado += n; 
-    });
-    return resultado;
+// *    Funcion declarada
+function saludar() {
+    console.log('Bienvenido');
 }
-console.log(sumar(1, 2, 3, 4));
 
 
 
-// TODO Oeprador Spread
-// * Concatena varios parametros en unos solo
-
-const arr1 = [1, 2, 3, 4, 5];
-const arr2 = [6, 7, 8, 9, 0];
-console.log('Arrreglo 1:',arr1,'Arrreglo 2:', arr2);
-
-const arr3 = [...arr1, ...arr2];
-console.log('Arreglo 1 y 2 en uno solo = ', arr3);
+// *    Funcion Anonima
+// !    Se tiene que llamar despues
+// !    que se declara la funcion
+const saludar2 = function() {
+    console.log('Bienvenido');
+}
 
 
+// *------------------------------------------------
 
 
 
+// *    Funcion de tipo flecha
+const saludar3 = () => {
+    console.log('Bienvenido');
+}
+
+
+// *    Otra forma con el mismo resultado
+const saludar4 = () => console.log('Bienvenido');
+
+
+// !    Si  pasamos parametros, lo podemos dejar como se muestra
+const saludar5 = name => console.log(`Bienvenido ${name}`);
+
+
+// !    Esta forma de funcion, tambien funciona como un RETURN
+const sumar = (a,b) => a+b;
+/* console.log(sumar(2,2)); */
 
 
 
+// *------------------------------------------------
 
 
+const numeros1 = [1, 2, 3, 4, 5];
+numeros1.forEach((el, index) => console.log(`${el} su posicion es: ${index}`));
 
 
+// *------------------------------------------------
 
-
-
-
-
-
-// function sumar(a, ...c) { // *  1 [2, 2]
-//     let resultado = a;
-    
-//     // * Itera solo 2 veces porque
-//     // * es con los valores almacenados 
-//     // * en "c"
-
-//     c.forEach(function (n) {
-//        resultado += n; 
-//     });
-//     return resultado;
+// const numeros2 = [6, 7, 8, 9, 0];
+// const imprimirArreglo = (arreglo) => { arreglo.forEach((n, i) => {
+//         console.log(`Elemento: ${n} y posicion: ${i}`)
+//     }); 
 // }
-// console.log(sumar(1, 2, 2));
+// imprimirArreglo(numeros2);
 
 
+// *------------------------------------------------
 
 
+// const numeros3 = [...numeros1, ...numeros2];
+// imprimirArreglo(numeros3);
