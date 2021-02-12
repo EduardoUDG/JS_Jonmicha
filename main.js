@@ -1,61 +1,85 @@
-// *    Funcion declarada
-function saludar() {
-    console.log('Bienvenido');
+// TODO Prototipos
+
+
+// ! POO
+/*
+* Clases = Modelo a seguir 
+* Objetos = es un instncia de una clase
+*   Atributos = es una caracteristica o propiedad del objeto
+*   Metodos   = Son las acciones que un objeto realiza
+*/
+
+const animal = {
+    nombre: 'Poppi',
+    sonar() {
+        console.log('Guauu Guauu!!');
+    }
+}
+// console.log(animal);
+
+
+
+
+
+
+
+
+
+
+
+// TODO Funcion Constructora 1
+// TODO esta la forma primitiva de como funciona
+function Animal(nombre, genero) {
+    // * Atributos
+    this.nombre = nombre;
+    this.genero = genero;
+
+    // * Metodos
+    this.sonar = function () {
+        console.log('Guauu Guauu!!');
+    }
+    this.saldo = function () {
+        console.log(`Hola soy ${this.nombre}`);
+    }
 }
 
+const snoopy = new Animal('Snoopy', 'Macho'),
+    lolaBynnu = new Animal('Lola Bunny', 'Hembra');
+// console.log(snoopy);
+// console.log(lolaBynnu);
 
 
-// *    Funcion Anonima
-// !    Se tiene que llamar despues
-// !    que se declara la funcion
-const saludar2 = function() {
-    console.log('Bienvenido');
+
+
+
+
+
+
+
+
+
+// TODO Funcion Constructora 2 donde los metodos
+// *    al prototipo como tal
+// *    para evitar duplicados de los metodos
+
+function Animal2(nombre, genero) {
+    // * Atributos
+    this.nombre = nombre;
+    this.genero = genero;
+
 }
 
-
-// *------------------------------------------------
-
-
-
-// *    Funcion de tipo flecha
-const saludar3 = () => {
-    console.log('Bienvenido');
+// * Metodos agregados alprototipo de la funcion constructora   
+Animal2.prototype.sonar = function () {
+    console.log('Guauu Guauu!!');
+}
+Animal2.prototype.saldo = function () {
+    console.log(`Hola soy ${this.nombre}`);
 }
 
+const poppi = new Animal2('Poppi', 'Macho'),
+    puka = new Animal2('Puka', 'Hembra');
 
-// *    Otra forma con el mismo resultado
-const saludar4 = () => console.log('Bienvenido');
+console.log(poppi);
+console.log(puka);
 
-
-// !    Si  pasamos parametros, lo podemos dejar como se muestra
-const saludar5 = name => console.log(`Bienvenido ${name}`);
-
-
-// !    Esta forma de funcion, tambien funciona como un RETURN
-const sumar = (a,b) => a+b;
-/* console.log(sumar(2,2)); */
-
-
-
-// *------------------------------------------------
-
-
-const numeros1 = [1, 2, 3, 4, 5];
-numeros1.forEach((el, index) => console.log(`${el} su posicion es: ${index}`));
-
-
-// *------------------------------------------------
-
-// const numeros2 = [6, 7, 8, 9, 0];
-// const imprimirArreglo = (arreglo) => { arreglo.forEach((n, i) => {
-//         console.log(`Elemento: ${n} y posicion: ${i}`)
-//     }); 
-// }
-// imprimirArreglo(numeros2);
-
-
-// *------------------------------------------------
-
-
-// const numeros3 = [...numeros1, ...numeros2];
-// imprimirArreglo(numeros3);
