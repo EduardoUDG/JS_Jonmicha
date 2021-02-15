@@ -1,85 +1,54 @@
-// TODO Prototipos
+
+class Animal {
+    // * El constructor es un metodo especial que se ejecuta
+    // * en el momento de instanciar la clase
+    constructor(nombre, genero){
+        // Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+    }
+
+    // Metodos
+    sonar(){
+        console.log('Hago sonidos por que estoy vivo');
+    }
+    saludar(){
+        console.log(`Hola me llamo ${this.nombre}`);
+    }
+}
 
 
-// ! POO
-/*
-* Clases = Modelo a seguir 
-* Objetos = es un instncia de una clase
-*   Atributos = es una caracteristica o propiedad del objeto
-*   Metodos   = Son las acciones que un objeto realiza
-*/
+const mimi = new Animal('Mimi','Hembra');
+const scooby = new Animal('Scooby','Macho');
 
-const animal = {
-    nombre: 'Poppi',
+console.log(mimi);
+console.log(scooby);
+
+
+
+//  * -------------------------------------------------------
+//  * HERENCIA 
+
+class Perro extends Animal {
+
+    constructor(nombre, genero, tamanio) {
+        // * Con el metodo super() se manda a
+        // * llamar el constructor de la clase padre
+        super(nombre, genero);
+        this.tamanio = tamanio;
+    }
+
     sonar() {
-        console.log('Guauu Guauu!!');
+        console.log('Soy un perro y mi sonido es un ladrido');
     }
-}
-// console.log(animal);
 
-
-
-
-
-
-
-
-
-
-
-// TODO Funcion Constructora 1
-// TODO esta la forma primitiva de como funciona
-function Animal(nombre, genero) {
-    // * Atributos
-    this.nombre = nombre;
-    this.genero = genero;
-
-    // * Metodos
-    this.sonar = function () {
-        console.log('Guauu Guauu!!');
-    }
-    this.saldo = function () {
-        console.log(`Hola soy ${this.nombre}`);
+    ladrar(){
+        console.log('Guauu Guauu!');
     }
 }
 
-const snoopy = new Animal('Snoopy', 'Macho'),
-    lolaBynnu = new Animal('Lola Bunny', 'Hembra');
-// console.log(snoopy);
-// console.log(lolaBynnu);
+const scooby2 = new Perro ('Scooby', 'Macho', 'Gigante');
 
-
-
-
-
-
-
-
-
-
-
-// TODO Funcion Constructora 2 donde los metodos
-// *    al prototipo como tal
-// *    para evitar duplicados de los metodos
-
-function Animal2(nombre, genero) {
-    // * Atributos
-    this.nombre = nombre;
-    this.genero = genero;
-
-}
-
-// * Metodos agregados alprototipo de la funcion constructora   
-Animal2.prototype.sonar = function () {
-    console.log('Guauu Guauu!!');
-}
-Animal2.prototype.saldo = function () {
-    console.log(`Hola soy ${this.nombre}`);
-}
-
-const poppi = new Animal2('Poppi', 'Macho'),
-    puka = new Animal2('Puka', 'Hembra');
-
-console.log(poppi);
-console.log(puka);
-
+console.log(scooby2);
+scooby2.saludar();
+scooby2.sonar();
