@@ -36,6 +36,7 @@ class Perro extends Animal {
         // * llamar el constructor de la clase padre
         super(nombre, genero);
         this.tamanio = tamanio;
+        this.raza = null;
     }
 
     sonar() {
@@ -45,10 +46,36 @@ class Perro extends Animal {
     ladrar(){
         console.log('Guauu Guauu!');
     }
+
+    // * Un metodo estático se puede ejecutar  
+    // * sin necesidad instanciar la clase
+
+    static soyMetodoEstatico(){
+        console.log('Hola soy un metodo estático');
+    }
+
+    // * Los setters y getters son métodos especiales 
+    // * que nos permiten establecer y obtener los
+    // * valores de atributos de nuestra clase
+    
+    get getRaza(){
+        return this.raza;
+    }
+    set setRaza(raza){
+        this.raza = raza;
+    }
+
 }
+// ! NOTA cuando usamos set y get
+// ! JS convierte las funciones en propiedades
+
+Perro.soyMetodoEstatico();
 
 const scooby2 = new Perro ('Scooby', 'Macho', 'Gigante');
 
 console.log(scooby2);
 scooby2.saludar();
 scooby2.sonar();
+console.log(scooby2.getRaza);
+scooby2.setRaza = 'Grán danés';
+console.log(scooby2.getRaza);
