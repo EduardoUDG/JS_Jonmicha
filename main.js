@@ -1,121 +1,76 @@
 
-console.log(console);
-console.error('Esto es un error');
-console.warn('Esto es un aviso');
-console.info('Este es un mensaje info');
+console.log(Date());
 
-// * log es como un registro de lo que  
-// * a pasado en nuestra aplicacion
+let fecha = new Date();
 
-let nombre = 'Eduardo', apellido = 'Chavez', edad = 20;
+// * Fecha
+console.log(fecha);
 
-console.log(nombre);
-console.log(apellido);
-console.log(edad);
-console.log(nombre, apellido, edad);
-console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad}`);
+// !------------------------------
 
 
-// * Comodines 
-console.log(`Hola mi nombre es %s %s y tengo %d`, nombre, apellido, edad);
-console.clear();
-// console.log(window);
-
-
-// * Imprime lo que hay en el documento
-// * por ejemplo imprimiendo las etiquetas HTML
-// console.log(document);
-
-
-// * (dir) muestra las propiedades y metodos en formato objeto
-// console.dir(document);t
-console.clear();
-
-console.group('Este es un group dentro la consola');
-console.log('Item #1');
-console.log('Item #2');
-console.log('Item #3');
-console.log('Item #4');
-console.log('Item #5');
-console.groupEnd();
+// * Día en numero
+console.log(fecha.getDate());
 
 
 
-// console.log(console);
-
-/* 
-* Queremos que represente todas las entradas
-* Del objeto console en una tabla
-* Usando el constructor objetc
-* y el metodo entries, para que genere una 
-* Fila por todas las propiedades del objeto console
-*/
-
-// console.table(Object.entries(console));
-// console.table(Object.entries(console).sort());
+// * Día de la semana en numero
+// * D-L-M-I-J-V-S  ->  0-1-2-3-4-5-6
+console.log(fecha.getDay());
 
 
 
+// * Mes en numero
+// * Enero  ->  0-1-2-3-4-5-6-7-8-9-10-11
+console.log(fecha.getMonth());
+
+
+// !------------------------------
 
 
 
+// * Año 
+console.log(fecha.getFullYear());
 
-console.clear();
-const numeros2 = [1, 2, 3, 4, 5]
-const vocales = ['a','e','i','o','u'];
-console.table(numeros2); 
-console.table(vocales);
+// * Obten la hora 
+console.log(fecha.getHours());
 
+// * Obten la minutos 
+console.log(fecha.getMinutes());
 
+// * Obten la segundos 
+console.log(fecha.getSeconds());
 
-
-
-
-
-// * Tabla con objetos
-console.clear();
-
-const perro = {
-    nombre: 'Pedro',
-    raza: 'Pug',
-    color: 'Dorado',
-} 
-
-const array1 = ['Juan','Carlos','Pepe','Diego','Ramirez','Javier','Luis'];
-// console.table(perro);
+// * Obten la milisegundos 
+console.log(fecha.getMilliseconds());
 
 
+// !------------------------------
 
-console.time('Cuanto tiempo tarda mi código');
-const arreglo2 = Array(1000000);
-for (let i = 0; i < arreglo2.length; i++) {
-    arreglo2[i] = i;    
-}
-console.timeEnd('Cuanto tiempo tarda mi código');
+// * Fecha a Sting
+console.log(fecha.toString());
 
+// * Solo la Fecha a Sting
+console.log(fecha.toDateString());
 
+// * Fecha en formato 00/00/00 y (Hora)
+console.log(fecha.toLocaleString());
 
-// * ----------------------------------------
-console.clear();
-// * Nos ayuda a saber cuantas veces 
-// * Se realizo una tarea, ciclo ect
+// * Fecha en formato 00/00/00
+console.log(fecha.toLocaleDateString());
 
-// for (let i = 0; i < 100; i++) {
-//     console.count('Código for');
-//     console.log(i);
-// }
+// * Solo el horario local
+console.log(fecha.toLocaleTimeString());
 
 
+// !------------------------------
 
-// * ------ una forma de hacer test muy basico
-
-let x = 1
-let y = 2
-let pruebaXY = 'Se esperaba que X siempre esa menor que Y';
-
-console.assert(x < y, {x, y ,pruebaXY}); 
+// * Obtiene la fecha del meridiano CERO 
+console.log(fecha.getUTCDate);
 
 
+// * Segundos del TimesTamp(1970) hasta la fecha actual
+console.log(Date.now());
 
-
-
+let cumpleEduardo = new Date(2000, 11, 8);
+console.log(cumpleEduardo);
