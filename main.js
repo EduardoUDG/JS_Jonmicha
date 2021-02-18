@@ -1,76 +1,38 @@
-
-console.log(Date());
-
-let fecha = new Date();
-
-// * Fecha
-console.log(fecha);
-
-// !------------------------------
+// ? Podemos ver a math como una libreria
+// ? ya que tiene funciones y valores constantes
+// ? ya definidos como las c y c++
 
 
-// * Día en numero
-console.log(fecha.getDate());
+// * Obejto math
+console.log(Math);
 
+// * Podemos usar math para sacar valores CONSTANTES 
+console.log('Valor constante' ,Math.PI);
 
+// * Valor absoluto
+console.log('Absoluto',Math.abs(-7.8));
 
-// * Día de la semana en numero
-// * D-L-M-I-J-V-S  ->  0-1-2-3-4-5-6
-console.log(fecha.getDay());
+// * Unidad arriba
+console.log('Entero hacia arriba 7.8 = ' ,Math.ceil(7.8));
 
+// * Unidad abajo
+console.log('Entero hacia abajo 7.2 = ' ,Math.floor(7.4));
 
+// * Redondear
+console.log('Redondear 7.5 = ' ,Math.round(7.5));
+console.log('Redondear 7.4 = ' ,Math.round(7.4));
 
-// * Mes en numero
-// * Enero  ->  0-1-2-3-4-5-6-7-8-9-10-11
-console.log(fecha.getMonth());
+// * Raiz
+console.log('Raiz de 81 = ' ,Math.sqrt(81));
 
+// * Potencia
+console.log('Potencia de 2^3 = ' ,Math.pow(2,3));
 
-// !------------------------------
+// * Saber si un numero es positivo o negativo
+console.log('Positivo = 0, Negativo = -1, cero = 0' ,Math.sign(-10));
+console.log('Positivo = 0, Negativo = -1, cero = 0' ,Math.sign(0));
+console.log('Positivo = 1, Negativo = -1, cero = 0' ,Math.sign(10));
 
+// * Random, simpre da un numero aleatorio entre 0 y 1
+console.log('Numero Random = ' , Math.round(Math.random() * 1000));
 
-
-// * Año 
-console.log(fecha.getFullYear());
-
-// * Obten la hora 
-console.log(fecha.getHours());
-
-// * Obten la minutos 
-console.log(fecha.getMinutes());
-
-// * Obten la segundos 
-console.log(fecha.getSeconds());
-
-// * Obten la milisegundos 
-console.log(fecha.getMilliseconds());
-
-
-// !------------------------------
-
-// * Fecha a Sting
-console.log(fecha.toString());
-
-// * Solo la Fecha a Sting
-console.log(fecha.toDateString());
-
-// * Fecha en formato 00/00/00 y (Hora)
-console.log(fecha.toLocaleString());
-
-// * Fecha en formato 00/00/00
-console.log(fecha.toLocaleDateString());
-
-// * Solo el horario local
-console.log(fecha.toLocaleTimeString());
-
-
-// !------------------------------
-
-// * Obtiene la fecha del meridiano CERO 
-console.log(fecha.getUTCDate);
-
-
-// * Segundos del TimesTamp(1970) hasta la fecha actual
-console.log(Date.now());
-
-let cumpleEduardo = new Date(2000, 11, 8);
-console.log(cumpleEduardo);
