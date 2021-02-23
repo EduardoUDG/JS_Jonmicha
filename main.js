@@ -1,44 +1,30 @@
+// * Expresiones regulares
+/* 
+* Son una secuencia de caracteres que formam un patrón
+* de búsqueda, principalmente utilizada Para la
+* busqueda de patrones de cadenas de caracteres.
 
-// console.log(window);
-
-// alert('Hola esto es una alerta');
-// confirm('Hola esto es una alerta');
-// prompt('Hola esto es un aviso y le permite al usuario ingresar un valor');
-
-// let alerta = alert('Hola esto es una alerta');
-// let confirmacion = confirm('Hola esto es una alerta');
-// let aviso = prompt('Hola esto es un aviso y le permite al usuario ingresar un valor');
- 
-// console.log(alerta);
-// console.log(confirmacion);
-// console.log(aviso);
+* https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular#:~:text=En%20c%C3%B3mputo%20te%C3%B3rico%20y%20teor%C3%ADa,conforma%20un%20patr%C3%B3n%20de%20b%C3%BAsqueda.
+* https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Hoja_de_referencia
+* https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+*/
 
 
+// ! .test() nos devuelve un boolean si se cumple la exprecion
+// ! .exec() nos devuelve algunos detalles de la expresion
+
+let cadena = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptas quae voluptatem veniam amet. Eveniet.';
+
+// * 1.Forma de crear una expresion regular
+let expReg = new RegExp('Lorem', '');
+
+// * 2.Forma de crear una expresion regular
+let expReg2 = /lorem/ig;
 
 
-// function sumar(a, ...c) { // *  1 [2, 2]
-//     let resultado = a;
-    
-//     // * Itera solo 2 veces porque
-//     // * es con los valores almacenados 
-//     // * en "c"
+console.log(expReg.test(cadena));
+console.log(expReg.exec(cadena));
 
-//     c.forEach(function (n) {
-//        resultado += n; 
-//     });
-//     return resultado;
-// }
-// console.log(sumar(1, 2, 2));
-
-function sumar(...c){
-    let resultado = null;
-
-    c.forEach(num => {
-        resultado += num;
-    });
-    return resultado;
-}
-
-
-console.log(sumar(1, 2, 3,4, 5));
+console.log(expReg2.test(cadena));
+console.log(expReg2.exec(cadena));
 
