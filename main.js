@@ -1,30 +1,44 @@
-// * Expresiones regulares
-/* 
-* Son una secuencia de caracteres que formam un patrón
-* de búsqueda, principalmente utilizada Para la
-* busqueda de patrones de cadenas de caracteres.
-
-* https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular#:~:text=En%20c%C3%B3mputo%20te%C3%B3rico%20y%20teor%C3%ADa,conforma%20un%20patr%C3%B3n%20de%20b%C3%BAsqueda.
-* https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Hoja_de_referencia
-* https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
-*/
 
 
-// ! .test() nos devuelve un boolean si se cumple la exprecion
-// ! .exec() nos devuelve algunos detalles de la expresion
 
-let cadena = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptas quae voluptatem veniam amet. Eveniet.';
+// * Funcion Anónima autoejecutable
 
-// * 1.Forma de crear una expresion regular
-let expReg = new RegExp('Lorem', '');
-
-// * 2.Forma de crear una expresion regular
-let expReg2 = /lorem/ig;
+(function () {
+    console.log('Mi primer IIFE');
+})();
 
 
-console.log(expReg.test(cadena));
-console.log(expReg.exec(cadena));
 
-console.log(expReg2.test(cadena));
-console.log(expReg2.exec(cadena));
+(function (d, w, c) {
+    console.log('Mi segunda IIFE');
+    console.log(d);
+    console.log(w);
+    c.log('Este es un console.log');
+})(document,window, console);
+
+// alert('Hola');
+
+// * Formas de escribir las funciones Anónimas
+// * Clasica:
+(function () {
+    console.log('Versión clásica')
+})();
+
+
+// * La Crockfrod (JavaScript The Good Parts):
+((function () {
+    console.log('Versión Crockford')
+})());
+
+
+// * Unaria
++function () {
+    console.log('Versión Unaria')
+}();
+
+
+// * Facebook
+!function () {
+    console.log('Versión Facebook')
+}();
 
